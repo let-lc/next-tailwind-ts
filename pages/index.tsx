@@ -4,7 +4,7 @@ import Head from 'next/head';
 type size = Record<'width' | 'height', string>;
 
 export default function Home() {
-  const [cricle, setCricle] = useState<Record<string, size>>({
+  const [{ a, b, c }, setCricle] = useState<Record<string, size>>({
     a: { width: '0', height: '0' },
     b: { width: '0', height: '0' },
     c: { width: '0', height: '0' },
@@ -33,22 +33,13 @@ export default function Home() {
         <div className="animate-bounce">
           <div className="flex animate-spin gap-x-2">
             <div className="flex h-24 w-24 items-center justify-center rounded-full">
-              <div
-                className="animate-bounce rounded-full bg-[#06B6D4] transition-all duration-150"
-                style={{ width: cricle.a.width, height: cricle.a.width }}
-              />
+              <div className="animate-bounce rounded-full bg-[#06B6D4] transition-all duration-150" style={a} />
             </div>
             <div className="flex h-24 w-24 items-center justify-center rounded-full">
-              <div
-                className="animate-bounce rounded-full bg-black transition-all duration-150"
-                style={{ width: cricle.b.width, height: cricle.b.width }}
-              />
+              <div className="animate-bounce rounded-full bg-black transition-all duration-150" style={b} />
             </div>
             <div className="flex h-24 w-24 items-center justify-center rounded-full">
-              <div
-                className="animate-bounce rounded-full bg-[#3178C6] transition-all duration-150"
-                style={{ width: cricle.c.width, height: cricle.c.width }}
-              />
+              <div className="animate-bounce rounded-full bg-[#3178C6] transition-all duration-150" style={c} />
             </div>
           </div>
         </div>
